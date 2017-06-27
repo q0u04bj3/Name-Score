@@ -7,5 +7,3 @@ for index, element in enumerate(file):
         sum+=(ord(letter)-64)
 
     print sum*(index+1)
-
-#    print int(ord(file[index][element]))-64
