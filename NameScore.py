@@ -1,8 +1,3 @@
-"""
-file = ["CDEF","ABC","FIJK"]
-file = sorted(file)
-"""
-
 import re
 pat = '[A-Z]+'
 
@@ -12,8 +7,4 @@ file = sorted(re.findall(pat, names_file))
 
 
 for index, element in enumerate(file):
-    sum=0
-    for letter in element:
-        sum+=(ord(letter)-64)
-
-        print sum*(index+1)
+    print sum([ord(letter)-64 for letter in element])*(index+1)
