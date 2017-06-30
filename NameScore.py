@@ -1,9 +1,15 @@
 import re
+
 pat = '[A-Z]+'
+score =[]
 
-name_file = open("name.dat","r")
-names_file = name_file.read()
-file = sorted(re.findall(pat, names_file))
+def NameScore(file):
+    with open(file) as file:
+        lines = file.readline()
 
-for index, element in enumerate(file):
-    print sum([ord(letter)-64 for letter in element])*(index+1)
+    sortedFile = sorted(re.findall(pat, lines))
+
+    for index, element in enumerate(sortedFile):
+        score.append(sum([ord(letter)-64 for letter in element])*(index+1))
+
+    return score
